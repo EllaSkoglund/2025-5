@@ -1,0 +1,67 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+<title>CodePen - 2025</title>
+<style>
+body {
+  background-image: url(https://geology.com/world/world-map-360.gif);
+}
+ol{
+  background:lightyellow;
+}
+
+.correct{
+  background:green;
+}
+
+.incorrect{
+  background:red;
+}
+</style>
+</head>
+<body translate="no">
+<h1>Problems</h1>
+<ol>
+<li>Who was the third president? <input data-correct="Thomas Jefferson"></li>
+<li>What is the biggest state in The U.S.?<input data-correct="Alaska"></li>
+<li>What is the biggest river in the world? <input data-correct="Nile"></li>
+<li>What is the tallest mountain in the world? <input data-correct="Mount Everest"></li>
+<li>What do you call a group of giraffes? <input data-correct="a tower"></li>
+<li>Which planet is closest to earth? <input data-correct="Mercury"></li>
+<li>Where did the olympics originate? <input data-correct="Greece"></li>
+<li>What is the diameter of a basketball hoop? <input data-correct="18 inches"></li>
+<li>Who lives in a pineapple under the sea? <input data-correct="SpongeBob SquarePants"></li>
+<li>What is the highest grossing holiday movie of all time? <input data-correct="Home Alone"></li>
+</ol>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+<script id="rendered-js">
+console.clear();
+console.log("hello universe!")
+
+$("input").change(onChange);
+
+function onChange(evt){
+  
+ let correct= $(this).data("correct");
+  let response = $(this).val();
+  console.log(correct,response)
+  if(correct == response){
+    console.log("answer correct")
+    $(this).removeClass("incorrect").addClass("correct");
+  } else{
+    console.log("answer incorrect");
+     $(this).removeClass("correct").addClass("incorrect");
+
+  }
+  
+}
+    </script>
+</body>
+</html>
